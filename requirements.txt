@@ -1,0 +1,10 @@
+streamlit
+tensorflow
+pandas==3.0.0
+numpy==2.4.2
+pip==26.0.1
+matplotlib==3.10.8
+openpyxl==3.1.5
+joblib
+pickle
+scikit-learn
