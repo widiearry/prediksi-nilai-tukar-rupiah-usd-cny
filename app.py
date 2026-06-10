@@ -530,7 +530,7 @@ def render_dynamic_css(theme):
 @st.cache_resource
 def load_model_and_scaler(currency: str):
     if currency == "USD/IDR":
-        model = tf.keras.models.load_model("models/usd_gru_tuning.keras")
+        model = tf.keras.models.load_model("models/usd_gru_tuning.keras", compile=False)
         scaler = joblib.load("scalers/usd_scaler.pkl")
         file_path = "USD.xlsx"
         obs_file_path = "ObsUSD.xlsx"
@@ -542,7 +542,7 @@ def load_model_and_scaler(currency: str):
             "MAPE": 0.2450
         }
     else:
-        model = tf.keras.models.load_model("models/cny_gru_tuning.keras")
+        model = tf.keras.models.load_model("models/cny_gru_tuning.keras", compile=False)
         scaler = joblib.load("scalers/cny_scaler.pkl")
         file_path = "CNY.xlsx"
         obs_file_path = "ObsCNY.xlsx"
